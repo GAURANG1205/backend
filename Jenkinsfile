@@ -24,11 +24,10 @@ pipeline {
         }
    post{
        success{
-        echo 'Deploy Successfully'
+        echo 'Deploy Successfullysada dsa'
        }
        failure{
        echo 'Failure Unable'
        }
    }
-
 }
