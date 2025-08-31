@@ -5,11 +5,11 @@ pipeline {
       githubPush()
    }
         stages{
-            stage('Clone the Backend Repo'){
-                steps{
-                   git 'https://github.com/GAURANG1205/backend'
-               }
-             }
+            stage('Clone the Backend Repo') {
+                steps {
+                    git branch: 'main', url: 'https://github.com/GAURANG1205/backend'
+                }
+            }
              stage('Build jar'){
                  steps{
                    sh 'mvn clean package -DskipTests'
