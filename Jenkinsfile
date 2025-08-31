@@ -22,7 +22,6 @@ pipeline {
                    }
              }
         }
-   }
    post{
        success{
         echo 'Deploy Successfully'
@@ -31,4 +30,5 @@ pipeline {
        echo 'Failure Unable'
        }
    }
-  }
+
+}
