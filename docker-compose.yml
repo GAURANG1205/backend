@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: codesensei-db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: codesensei
+    ports:
+      - "3306:3306"
+    networks:
+      - codesensei-net
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: codesensei-app
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/codesensei
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+    ports:
+      - "9090:8080"
+    networks:
+      - codesensei-net
+
+networks:
+  codesensei-net:
+
