@@ -27,7 +27,7 @@ pipeline {
         echo 'Deploy Successfullysada dsa'
        }
        failure{
-       echo 'Failure Unable'
+       echo 'Failure Unable to ddeployed'
        }
    }
 }
